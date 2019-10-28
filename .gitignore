@@ -1,0 +1,4 @@
+*.o
+klondike
+*.dSYM*
+a.out
