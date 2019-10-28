@@ -128,12 +128,12 @@ int num_moves(t_board *b)
     int i;
 
     (void)memset(g_moves, 0, sizeof(g_moves));
-    stock_to_waste(b);
-    waste_to_stock(b);
     waste_to_foundation(b);
-    waste_to_tableau(b);
     tableau_to_foundation(b);
     tableau_to_tableau(b);
+    waste_to_tableau(b);
+    waste_to_stock(b);
+    stock_to_waste(b);
     for (i=0; g_moves[i]; i+=2) ;
     return i>>1;
 }
@@ -203,7 +203,7 @@ static void move(t_board *original, t_board *clone, int idx)
         return ;
     snprintf(clone->desc, 256, "move waste to stock");
     len = strlen(clone->stock);
-    for (i=0; i<(len>>1); i++) {
+    for (i=0; i<(len>>1); i++) { /* reverse order */
         tmp = dst[i];
         dst[i] = dst[len-1-i];
         dst[len-1-i] = tmp;
