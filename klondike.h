@@ -17,5 +17,6 @@ int     stoi(char *s);
 char    *itos(int i);
 t_board *stob(char *s);
 void    print(t_board *b);
+int     num_moves(t_board *b);
 
 #endif
