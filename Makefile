@@ -2,7 +2,7 @@ NAME = klondike
 SRC = main.c moves.c print.c utils.c
 OBJ = $(SRC:.c=.o)
 
-CFLAGS += -g -Wall -Werror -Wextra
+CFLAGS += -g #-Wall -Werror -Wextra
 LDFLAGS += -g
 
 all: $(NAME)
