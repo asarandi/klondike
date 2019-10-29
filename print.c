@@ -22,7 +22,7 @@ static int len_bt(t_board *b)
     return res;
 }
 
-void print(t_board *b)
+void print_board(t_board *b)
 {
     int i, j;
     printf("%s\n", b->desc);

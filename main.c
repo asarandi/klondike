@@ -2,7 +2,8 @@
 
 int is_goal(t_board *b)
 {
-    int i, j, calc;
+    int         i, j, calc;
+
     for (i=calc=0; i<4; i++)
     {
         for (j=0; b->f[i][j]; j++)
@@ -11,80 +12,79 @@ int is_goal(t_board *b)
     return calc == 52;
 }
 
-int cmp(t_board *a, t_board *b)
+int cmp(void *ptr_a, void *ptr_b)
 {
-    return memcmp(a,b,sizeof(t_board));
+    int         res;
+    t_board     *a, *b;
+
+    a = ptr_a;
+    b = ptr_b;
+    res = (a->g + a->h) - (b->g + b->h);
+    return res == 0 ? a->c - b->c : res;
 }
 
-int is_seen(t_board **path, t_board *node)
+void p(t_board *b)
 {
-    for (int i=0; path[i]; i++)
+    while (b)
     {
-        if (!cmp(path[i], node))
-            return 1;
+        print_board(b);
+        printf("\n");
+        b = b->parent;
     }
-    return 0;
-}
-
-int search(t_board **path, int *idx, int g, int bound)
-{
-    static int p;
-
-    t_board *vertex = path[*idx];
-    int f = g + heuristic(vertex);
-    if (f > bound)
-        return f;
-    if (is_goal(vertex))
-        return 0x7ffffffa;
-    int min = 0x7fffffff;
-    t_board **moves = make_moves(vertex);
-    if (!moves) return min;
-    for (int i=0; moves[i]; i++)
-    {
-        if (is_seen(path, moves[i]))
-            continue ;
-        path[++(*idx)] = moves[i];
-        int t = search(path, idx, g + 1, bound);
-        if (t == 0x7ffffffa)
-            return 0x7ffffffa;
-        if (t < min) {
-            min = t;
-            if (p < t)
-            {
-                p = t;
-                for (int j=0;j<10;j++) printf("- - -\n");
-                printf("idx = %d, new bound = %d\n", *idx, t);
-                for (int j=0;j<=*idx;j++) print(path[j]);
-            }
-        }
-        free(path[*idx]);            
-        path[(*idx)--] = NULL;            
-    }
-    free(moves);
-    return min;
 }
 
 int main()
 {
+    pq          *q;
+    t_hash_table *ht;
+    t_board     *root, *vertex, *tmp, **moves;
+//    char        *deck = "4283T3215393K254Q3845213T464K3Q124413482433233T172K1T2J12322113161629471514473J3J481Q4927412Q2J2K4631491";
+    char        *deck = "2264Q27282629433Q454529184232131837324Q343K39213K412T2J26174716334448141J4T1K2J111T493J3Q1T35342321451K1";
+    int         i, tentative_g;
 
-//    char *deck = "4283T3215393K254Q3845213T464K3Q124413482433233T172K1T2J12322113161629471514473J3J481Q4927412Q2J2K4631491";
-    char *deck = "2264Q27282629433Q454529184232131837324Q343K39213K412T2J26174716334448141J4T1K2J111T493J3Q1T35342321451K1";
-    static t_board *path[256];
-    t_board *root = stob(deck);
+    root = stob(deck);
+    root->h = heuristic(root);
 
-    int bound = heuristic(root);
-    int t;
-    path[0] = root;
-    int idx = 0;
-    for (;;)
+    ht = ht_init();
+    q = pq_init(&cmp);
+    pq_insert(q, root);
+
+    while (q->num_nodes)
     {
-        t = search(path, &idx, 0, bound);
-        if (t == 0x7ffffffa)
+        vertex = (t_board *)pq_extract(q);
+        if (is_goal(vertex))
             break ;
-        if (t == 0x7fffffff)
-            break ;
-        bound = t;
+        if (vertex->is_closed)
+            continue ;
+        vertex->is_closed = 1;
+        tentative_g = vertex->g + 1; /* XXX */
+        moves = make_moves(vertex);
+        if (!moves)
+            continue ;
+        for (i=0; moves[i]; i++)
+        {
+            if ((tmp = ht_find(ht, moves[i])))
+            {
+                free(moves[i]);
+                moves[i] = tmp;
+            }
+            if (moves[i]->is_closed)
+                continue ;
+            if ((moves[i]->is_open) && (moves[i]->g <= tentative_g))
+                continue ;
+            moves[i]->is_open = 1;
+            moves[i]->g = tentative_g;
+            ht_insert(ht, moves[i]);
+            pq_insert(q, moves[i]);                            
+        }
+        free(moves);
     }
-    printf("result: %08x\n", t);
+
+    p(vertex);            
+
+    pq_destroy(q);
+    ht_destroy(ht);
+
     return 0;
+
 }

@@ -65,6 +65,6 @@ t_board     *stob(char *s)
     }
     for (y=0; y<24; y++)
         b->stock[y] = stoi(s+i+(y<<1));
-    snprintf(b->desc, 256, "initial");
+    snprintf(b->desc, SIZE_DESC, "initial");
     return b;
 }

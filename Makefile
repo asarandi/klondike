@@ -1,5 +1,5 @@
 NAME = klondike
-SRC = main.c moves.c print.c utils.c
+SRC = ht.c main.c moves.c print.c pq.c utils.c
 OBJ = $(SRC:.c=.o)
 
 CFLAGS += -g #-Wall -Werror -Wextra

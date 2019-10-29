@@ -3,7 +3,7 @@
 #define RANK(a) (((a)>>2)&15)
 #define SUIT(a) ((a)&3)
 
-static void *g_moves[32];
+static void *g_moves[256];
 
 static void store_move(void *src, void *dst)
 {
@@ -192,8 +192,8 @@ t_board *make_clone(t_board *original, int idx)
         sizeof(original->t)        
     );
 
-    src = (void *)g_moves[idx] - (void *)original + (void *)clone;
-    dst = (void *)g_moves[idx+1] - (void *)original + (void *)clone;
+    src = g_moves[idx] - (void *)original + (void *)clone;
+    dst = g_moves[idx+1] - (void *)original + (void *)clone;
 
     len = strlen(src);
     strncpy(dst, src, len);
@@ -205,7 +205,7 @@ t_board *make_clone(t_board *original, int idx)
 
     if ((void *)dst == (void *)clone->stock)
     {
-        snprintf(clone->desc, 256, "move waste to stock");
+        snprintf(clone->desc, SIZE_DESC, "move waste to stock");
         len = strlen(clone->stock);
         for (i=0; i<(len>>1); i++) { /* reverse order */
             tmp = dst[i];
@@ -214,7 +214,7 @@ t_board *make_clone(t_board *original, int idx)
         }
     }
     else
-        snprintf(clone->desc, 256, "move %s from %s to %s", itos(*dst), fn(clone,src), fn(clone,dst));
+        snprintf(clone->desc, SIZE_DESC, "move %s from %s to %s", itos(*dst), fn(clone,src), fn(clone,dst));
 
     clone->c = ++clone_counter;
     clone->g = INT_MAX;
