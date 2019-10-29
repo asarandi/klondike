@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>id</key><integer>1002459</integer><key>deck</key><string>52T4T2Q41254Q263K4536191J2K2249283Q121T174114213T3J414Q384K343J182K194227332814462J323314193517264333471</string><key>draw</key><integer>1</integer><key>solution</key><string>011201601501671581601691621621152391371431421401BC1BC1C71BC1C31BC1BC1BC1BC1BC1C51C11BC1C91BC1C81BC1C61162214BC1BC1BC1C01C71504BC1C01BC1BC1C31BC1C11511521571BC1C51654BC1C21C21C21324BC1C31BC1239BC1C2132BBC1C51CB0BC1C51BC1C71BC1C114114A1BC1751C51BC1711C112A10A10912811811712A10A12810812A12815911911A11812A15710715910910A12912A15711711911A12911915810815710712711715810812815A10A1591</string><key>maxNumberOfScores</key><string>25</string>
+<key>scores</key><array>
+  <array><string>Walktall2209 🇷🇸</string><string>28706</string><string>106</string><string>25</string></array>
+  <array><string>zach big beans king</string><string>28696</string><string>104</string><string>25</string></array>
+  <array><string>Ilodia</string><string>28686</string><string>105</string><string>25</string></array>
+  <array><string>Harti 2017</string><string>28681</string><string>104</string><string>25</string></array>
+  <array><string>Scrappytoon</string><string>28681</string><string>101</string><string>25</string></array>
+  <array><string>Raynor The Captain</string><string>28666</string><string>100</string><string>25</string></array>
+  <array><string>Noonie181</string><string>28611</string><string>120</string><string>25</string></array>
+  <array><string>manners 57manners57</string><string>28596</string><string>116</string><string>25</string></array>
+  <array><string>Rad1c4</string><string>28588</string><string>117</string><string>25</string></array>
+  <array><string>larskjell</string><string>28496</string><string>128</string><string>25</string></array>
+  <array><string>Pidimesui</string><string>27599</string><string>105</string><string>26</string></array>
+  <array><string>&lt;*zinc*&gt;</string><string>27516</string><string>117</string><string>26</string></array>
+  <array><string>iMucho Joy</string><string>27514</string><string>127</string><string>26</string></array>
+  <array><string>ちびちびちびちびちび</string><string>26621</string><string>111</string><string>27</string></array>
+  <array><string>日替り弁当</string><string>26511</string><string>117</string><string>27</string></array>
+  <array><string>50=50</string><string>25681</string><string>105</string><string>28</string></array>
+  <array><string>rilesax</string><string>25586</string><string>128</string><string>28</string></array>
+  <array><string>~ 123.123 ~</string><string>25581</string><string>114</string><string>28</string></array>
+  <array><string>JB-man</string><string>25576</string><string>117</string><string>28</string></array>
+  <array><string>best Mama ( :</string><string>24823</string><string>107</string><string>29</string></array>
+  <array><string>Waschbrettbauch</string><string>24818</string><string>107</string><string>29</string></array>
+  <array><string>wata923</string><string>24818</string><string>104</string><string>29</string></array>
+  <array><string>うさち.</string><string>24743</string><string>116</string><string>29</string></array>
+  <array><string>thsergei</string><string>24738</string><string>121</string><string>29</string></array>
+  <array><string>Josephmaxim22</string><string>24733</string><string>119</string><string>29</string></array>
+</array>
+<key>bestmoves</key><array>
+  <array><string>_!4a!_</string><string>2865</string><string>98</string><string>309</string></array>
+  <array><string>wild_filly</string><string>6672</string><string>98</string><string>116</string></array>
+  <array><string>Ljegoofinoff</string><string>9630</string><string>98</string><string>78</string></array>
+  <array><string>Larhonse Gaither</string><string>5897</string><string>98</string><string>133</string></array>
+  <array><string>Totoro514</string><string>6944</string><string>98</string><string>111</string></array>
+  <array><string>Zubi.asim</string><string>5426</string><string>98</string><string>146</string></array>
+  <array><string>chicha196101</string><string>3229</string><string>98</string><string>268</string></array>
+  <array><string>Jamjo</string><string>2626</string><string>98</string><string>344</string></array>
+  <array><string>maxinme</string><string>4248</string><string>98</string><string>193</string></array>
+  <array><string>rs se</string><string>5032</string><string>98</string><string>159</string></array>
+  <array><string>danno 74 12</string><string>2561</string><string>98</string><string>355</string></array>
+  <array><string>-MaddDogg-</string><string>4975</string><string>98</string><string>161</string></array>
+  <array><string>Beaverboilermaker</string><string>5098</string><string>98</string><string>157</string></array>
+  <array><string>!SavEle!</string><string>2392</string><string>98</string><string>387</string></array>
+  <array><string>p2 95</string><string>4626</string><string>98</string><string>175</string></array>
+  <array><string>~LunaBlu2~</string><string>4745</string><string>98</string><string>170</string></array>
+  <array><string>KD6MLU🐍🇺🇸🤡</string><string>3644</string><string>98</string><string>231</string></array>
+  <array><string># BigJohn48 #</string><string>4211</string><string>98</string><string>195</string></array>
+  <array><string>Thruwayman54</string><string>1685</string><string>98</string><string>610</string></array>
+  <array><string>JMQ007</string><string>2532</string><string>98</string><string>361</string></array>
+  <array><string>Tequila The Sorcerer</string><string>4626</string><string>98</string><string>175</string></array>
+  <array><string>Jetzie</string><string>2277</string><string>98</string><string>412</string></array>
+  <array><string>==(ch1p 21)==</string><string>5596</string><string>98</string><string>141</string></array>
+  <array><string>zetapsipitaupk</string><string>7001</string><string>98</string><string>110</string></array>
+  <array><string>mals970</string><string>4743</string><string>98</string><string>170</string></array>
+</array>
+<key>firstplayscores</key><array>
+  <array><string>Walktall2209 🇷🇸</string><string>28706</string><string>111</string><string>25</string></array>
+  <array><string>iMucho Joy</string><string>27514</string><string>127</string><string>26</string></array>
+  <array><string>Noonie181</string><string>27514</string><string>120</string><string>26</string></array>
+  <array><string>Raynor The Captain</string><string>26596</string><string>102</string><string>27</string></array>
+  <array><string>rilesax</string><string>25586</string><string>128</string><string>28</string></array>
+  <array><string>Waschbrettbauch</string><string>24818</string><string>107</string><string>29</string></array>
+  <array><string>wata923</string><string>24818</string><string>104</string><string>29</string></array>
+  <array><string>Josephmaxim22</string><string>24733</string><string>119</string><string>29</string></array>
+  <array><string>Food on a Stick</string><string>24733</string><string>121</string><string>29</string></array>
+  <array><string>WiZz_K1LL3R</string><string>24718</string><string>119</string><string>29</string></array>
+  <array><string>玉垂鶴尚</string><string>23932</string><string>120</string><string>30</string></array>
+  <array><string>lavin 7</string><string>23932</string><string>117</string><string>30</string></array>
+  <array><string>eddie 2317</string><string>23917</string><string>123</string><string>30</string></array>
+  <array><string>みしまくん51</string><string>23832</string><string>135</string><string>30</string></array>
+  <array><string>＞° )))))彡</string><string>23184</string><string>124</string><string>31</string></array>
+  <array><string>3.14159265358979pi</string><string>23169</string><string>119</string><string>31</string></array>
+  <array><string>kadtri</string><string>22565</string><string>107</string><string>32</string></array>
+  <array><string>2izy71</string><string>22474</string><string>135</string><string>32</string></array>
+  <array><string>TheSolitaireGod</string><string>22474</string><string>122</string><string>32</string></array>
+  <array><string>hakoniwa324</string><string>22474</string><string>121</string><string>32</string></array>
+  <array><string>Hūgo_Fürst</string><string>22474</string><string>122</string><string>32</string></array>
+  <array><string>ルンダナベイビー</string><string>22474</string><string>120</string><string>32</string></array>
+  <array><string>ruika1994</string><string>22469</string><string>124</string><string>32</string></array>
+  <array><string>&lt;*zinc*&gt;</string><string>22464</string><string>123</string><string>32</string></array>
+  <array><string>mikado2121</string><string>22455</string><string>120</string><string>32</string></array>
+</array>
+</dict></plist>

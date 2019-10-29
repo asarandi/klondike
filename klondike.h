@@ -7,7 +7,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-# define SIZE_DESC 64
+# define SIZE_DESC 48
 
 typedef struct      s_board
 {

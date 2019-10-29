@@ -1,13 +1,18 @@
 #include "klondike.h"
 
-static void __ht_insert(void **entries, size_t capacity, t_board *b)
+static int __ht_insert(void **entries, size_t capacity, t_board *b)
 {
     size_t  i;
 
     i = b->hash % capacity;
     while (entries[i])
+    {
+        if (((t_board *)entries[i])->hash == b->hash)
+            return 0;
         i = ++i % capacity;
+    }
     entries[i] = b;
+    return 1;
 }
 
 static void ht_extend(t_hash_table *ht)
@@ -21,8 +26,8 @@ static void ht_extend(t_hash_table *ht)
     for (i=count=0; i < ht->capacity; i++)
     {
         if (ht->entries[i]) {            
-            __ht_insert(new_entries, new_capacity, ht->entries[i]);        
-            ++count;
+            if (__ht_insert(new_entries, new_capacity, ht->entries[i]))
+                ++count;
         }
         if (count >= ht->num_keys)
             break;
@@ -34,10 +39,10 @@ static void ht_extend(t_hash_table *ht)
 
 void        ht_insert(t_hash_table *ht, t_board *b)
 {
-    ++ht->num_keys;        
     if (((ht->num_keys * 100) / ht->capacity) > 75)
         ht_extend(ht);
-    __ht_insert(ht->entries, ht->capacity, b);        
+    if (__ht_insert(ht->entries, ht->capacity, b))
+        ++ht->num_keys;
 }
 
 t_board     *ht_find(t_hash_table *ht, t_board *b)
