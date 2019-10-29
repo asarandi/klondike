@@ -138,17 +138,6 @@ int num_moves(t_board *b)
     return i>>1;
 }
 
-static t_board *clone(t_board *b)
-{
-    t_board *res;
-
-    if (!(res = calloc(1, sizeof(t_board))))
-        fprintf(stderr, "%s: calloc() failed\n", __func__);
-    memcpy(res, b, sizeof(t_board));        
-    strcpy(res->desc, "clone");
-    return res;
-}
-
 /* field name */
 static char *fn(t_board *b, void *ptr)
 {
@@ -184,30 +173,63 @@ static char *fn(t_board *b, void *ptr)
     return NULL;
 }
 
-static void move(t_board *original, t_board *clone, int idx)
+static int clone_counter;
+
+t_board *make_clone(t_board *original, int idx)
 {
-    int i, len, tmp;
-    char *src, *dst;
+    t_board     *clone;
+    char        *src, *dst;
+    int         i, len, tmp;
+
+    if (!(clone = calloc(1, sizeof(t_board))))
+        fprintf(stderr, "%s: calloc() failed\n", __func__);
+    memcpy(
+        clone->waste,
+        original->waste,
+        sizeof(original->waste) +
+        sizeof(original->stock) +
+        sizeof(original->f) +
+        sizeof(original->t)        
+    );
 
     src = (void *)g_moves[idx] - (void *)original + (void *)clone;
     dst = (void *)g_moves[idx+1] - (void *)original + (void *)clone;
-    snprintf(clone->desc, 256, "move %s from %s to %s", itos(*src), fn(clone,src), fn(clone,dst));
+
     len = strlen(src);
     strncpy(dst, src, len);
     memset(src, 0, len);
     for (i=0; i<7; i++) {
-        if (len = strlen(clone->t[i]))
+        if ((len = strlen(clone->t[i])))
             clone->t[i][len-1] |= 64;
     }    
-    if ((void *)dst != (void *)clone->stock)
-        return ;
-    snprintf(clone->desc, 256, "move waste to stock");
-    len = strlen(clone->stock);
-    for (i=0; i<(len>>1); i++) { /* reverse order */
-        tmp = dst[i];
-        dst[i] = dst[len-1-i];
-        dst[len-1-i] = tmp;
+
+    if ((void *)dst == (void *)clone->stock)
+    {
+        snprintf(clone->desc, 256, "move waste to stock");
+        len = strlen(clone->stock);
+        for (i=0; i<(len>>1); i++) { /* reverse order */
+            tmp = dst[i];
+            dst[i] = dst[len-1-i];
+            dst[len-1-i] = tmp;
+        }
     }
+    else
+        snprintf(clone->desc, 256, "move %s from %s to %s", itos(*dst), fn(clone,src), fn(clone,dst));
+
+    clone->c = ++clone_counter;
+    clone->g = INT_MAX;
+    clone->h = heuristic(clone);
+    clone->parent = original;
+
+    clone->hash = hash(
+        clone->waste,
+        sizeof(original->waste) +
+        sizeof(original->stock) +
+        sizeof(original->f) +
+        sizeof(original->t)        
+    );
+
+    return clone;
 }
 
 t_board **make_moves(t_board *b)
@@ -221,9 +243,6 @@ t_board **make_moves(t_board *b)
         fprintf(stderr, "%s: calloc() failed\n", __func__);
     res[n] = NULL;        
     for (i=0; g_moves[i]; i += 2)
-    {
-        res[i>>1] = clone(b);
-        move(b, res[i>>1], i);
-    }
+        res[i>>1] = make_clone(b, i);
     return res;
 }

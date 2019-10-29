@@ -1,5 +1,35 @@
 #include "klondike.h"
 
+/* FNV-1a */
+size_t hash(void *data, size_t size)
+{
+    size_t hash = 0xcbf29ce484222325L;
+    for (size_t i=0; i<size; i++)
+    {
+        hash ^= *(unsigned char *)(data+i);
+        hash *= 0x00000100000001B3L;
+    }
+    return hash;
+}
+
+int heuristic(t_board *b)
+{
+
+    int i, j, res, calc;
+    for (i=calc=0; i<4; i++)
+    {
+        for (j=0; b->f[i][j]; j++)
+            ++calc;
+    }
+    res = 52-calc;
+    for (i=0;i<7;i++)
+    {
+        for (j=0; b->t[i][j]; j++)
+            res += (!(b->t[i][j] & 64));
+    }
+    return res;
+}
+
 int stoi(char *s)
 {
     char *ranks = "_123456789TJQK";

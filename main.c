@@ -1,23 +1,5 @@
 #include "klondike.h"
 
-int heuristic(t_board *b)
-{
-
-    int i, j, res, calc;
-    for (i=calc=0; i<4; i++)
-    {
-        for (j=0; b->f[i][j]; j++)
-            ++calc;
-    }
-    res = 52-calc;
-    for (i=0;i<7;i++)
-    {
-        for (j=0; b->t[i][j]; j++)
-            res += (!(b->t[i][j] & 64));
-    }
-    return res;
-}
-
 int is_goal(t_board *b)
 {
     int i, j, calc;
