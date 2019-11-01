@@ -16,7 +16,7 @@ static void store_move(void *src, void *dst)
     {
         if ((g_moves[i] == src) && (g_moves[i + 1] == dst))
             return ;
-        i += 2;            
+        i += 2;
     }
     g_moves[i] = src;
     g_moves[i + 1] = dst;
@@ -26,7 +26,7 @@ static void store_move(void *src, void *dst)
 static void stock_to_waste(t_board *b)
 {
     int i, j;
-    
+
     if (!(i = strlen(b->stock)))
         return ;
     j = strlen(b->waste);
@@ -52,9 +52,9 @@ static void to_foundation(t_board *b, void *ptr_card)
         if (!(len = strlen(b->f[i]))) {
             if (RANK(card) == 1)    /* ace to empty foundation */
                 return store_move(ptr_card, &b->f[i][len]);
-            continue ;                
+            continue ;
         }
-        top = b->f[i][len-1];            
+        top = b->f[i][len-1];
         if ((RANK(top)+1 == RANK(card)) && (SUIT(top) == SUIT(card)))
             return store_move(ptr_card, &b->f[i][len]);
     }
@@ -108,6 +108,18 @@ static void tableau_to_foundation(t_board *b)
     }
 }
 
+static void foundation_to_tableau(t_board *b)
+{
+    int i, len;
+
+    for (i=0; i<4; i++)
+    {
+        len = strlen(b->f[i]);
+        if (!len) continue ;
+        to_tableau(b, &b->f[i][len-1]);
+    }
+}
+
 static void tableau_to_tableau(t_board *b)
 {
     int i, j;
@@ -118,7 +130,7 @@ static void tableau_to_tableau(t_board *b)
         {
             if (!((b->t[i][j])&64))
                 continue ;
-            to_tableau(b, &b->t[i][j]);                
+            to_tableau(b, &b->t[i][j]);
         }
     }
 }
@@ -134,6 +146,7 @@ int num_moves(t_board *b)
     waste_to_tableau(b);
     waste_to_stock(b);
     stock_to_waste(b);
+    foundation_to_tableau(b);
     for (i=0; g_moves[i]; i+=2) ;
     return i>>1;
 }
@@ -154,9 +167,9 @@ static char *fn(t_board *b, void *ptr)
     static char *fnd_1 = "foundation #2";
     static char *fnd_2 = "foundation #3";
     static char *fnd_3 = "foundation #4";
-    
+
     if ((ptr >= (void *)b->waste) && (ptr < (void *)b->waste + sizeof(b->waste)))      return waste;
-    if ((ptr >= (void *)b->stock) && (ptr < (void *)b->stock + sizeof(b->stock)))      return stock;        
+    if ((ptr >= (void *)b->stock) && (ptr < (void *)b->stock + sizeof(b->stock)))      return stock;
     if ((ptr >= (void *)b->t[0]) && (ptr < (void *)b->t[0] + sizeof(b->t[0])))        return tab_0;
     if ((ptr >= (void *)b->t[1]) && (ptr < (void *)b->t[1] + sizeof(b->t[1])))        return tab_1;
     if ((ptr >= (void *)b->t[2]) && (ptr < (void *)b->t[2] + sizeof(b->t[2])))        return tab_2;
@@ -189,7 +202,7 @@ t_board *make_clone(t_board *original, int idx)
         sizeof(original->waste) +
         sizeof(original->stock) +
         sizeof(original->f) +
-        sizeof(original->t)        
+        sizeof(original->t)
     );
 
     src = g_moves[idx] - (void *)original + (void *)clone;
@@ -201,7 +214,7 @@ t_board *make_clone(t_board *original, int idx)
     for (i=0; i<7; i++) {
         if ((len = strlen(clone->t[i])))
             clone->t[i][len-1] |= 64;
-    }    
+    }
 
     if ((void *)dst == (void *)clone->stock)
     {
@@ -218,15 +231,13 @@ t_board *make_clone(t_board *original, int idx)
 
     clone->c = ++clone_counter;
     clone->g = INT_MAX;
-    clone->h = heuristic(clone);
-    clone->parent = original;
 
     clone->hash = hash(
         clone->waste,
-        sizeof(original->waste) +
-        sizeof(original->stock) +
-        sizeof(original->f) +
-        sizeof(original->t)        
+        sizeof(clone->waste) +
+        sizeof(clone->stock) +
+        sizeof(clone->f) +
+        sizeof(clone->t)
     );
 
     return clone;
@@ -241,7 +252,7 @@ t_board **make_moves(t_board *b)
         return NULL;
     if (!(res = calloc(n + 1, sizeof(t_board *))))
         fprintf(stderr, "%s: calloc() failed\n", __func__);
-    res[n] = NULL;        
+    res[n] = NULL;
     for (i=0; g_moves[i]; i += 2)
         res[i>>1] = make_clone(b, i);
     return res;
