@@ -9,7 +9,7 @@ static int __ht_insert(void **entries, size_t capacity, t_board *b)
     {
         if (((t_board *)entries[i])->hash == b->hash)
             return 0;
-        i = ++i % capacity;
+        i = (i + 1) % capacity;
     }
     entries[i] = b;
     return 1;
@@ -25,7 +25,7 @@ static void ht_extend(t_hash_table *ht)
         return (void)fprintf(stderr, "%s: calloc() failed\n", __func__);
     for (i=count=0; i < ht->capacity; i++)
     {
-        if (ht->entries[i]) {            
+        if (ht->entries[i]) {
             if (__ht_insert(new_entries, new_capacity, ht->entries[i]))
                 ++count;
         }
@@ -54,7 +54,7 @@ t_board     *ht_find(t_hash_table *ht, t_board *b)
     {
         if (((t_board *)ht->entries[i])->hash == b->hash)
             return (t_board *)ht->entries[i];
-        i = ++i % ht->capacity;            
+        i = (i + 1) % ht->capacity;
     }
     return NULL;
 }
@@ -65,7 +65,7 @@ t_hash_table *ht_init()
 
     if (!(ht = calloc(1, sizeof(t_hash_table))))
         (void)fprintf(stderr, "%s: calloc() failed\n", __func__);
-    ht->capacity = 256;    
+    ht->capacity = 256;
     if (!(ht->entries = calloc(ht->capacity, sizeof(void *))))
         (void)fprintf(stderr, "%s: calloc() failed\n", __func__);
     return ht;

@@ -33,7 +33,7 @@ void p(t_board *b)
         printf("\n");
         b = b->parent;
     }
-    printf("\ntotal = %d moves\n\n\n\n\n\n", count);
+    printf("\ntotal = %d moves\n\n\n\n\n\n", count-1);
     fflush(stdout);
 }
 
@@ -52,10 +52,10 @@ int main(int ac, char **av)
 {
     pq          *q;
     t_hash_table *ht;
-    t_board     *root, *vertex, *tmp, **moves;
+    t_board     *root, *vertex = NULL, *tmp, **moves;
 //    char        *deck = "4283T3215393K254Q3845213T464K3Q124413482433233T172K1T2J12322113161629471514473J3J481Q4927412Q2J2K4631491";
     char        *deck = "2264Q27282629433Q454529184232131837324Q343K39213K412T2J26174716334448141J4T1K2J111T493J3Q1T35342321451K1";
-    int         i, saved_g = 0, tentative_g;
+    int         i, tentative_g;
 
     if ((ac == 2) && (strlen(av[1]) == 52<<1))
         deck = av[1];

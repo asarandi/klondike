@@ -2,3 +2,4 @@
 klondike
 *.dSYM*
 a.out
+data/
