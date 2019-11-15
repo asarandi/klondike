@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>id</key><integer>1002424</integer><key>deck</key><string>J421J11481337322643462J261511263Q3Q2K4T45341832411K3J3Q44443K171315492T3429113845272K29482932332T274T1Q1</string><key>draw</key><integer>1</integer><key>solution</key><string>651651671BC1C31031303381181171513361391591691BC1C01BC1C41BC1C11BC1C81BC1BC1C11BC1C11BC1C01402BC1C31BC1BC1BC1BC1CA1BC1C41C41BC1C21BC1BC1BC1BC1C71671251271522531531521BC1C41244261323468401C01BC1C3163A671611411BC1BC1C91091CB0BC1CA13A1381BC1BC1C81BC1C21BC1C21BC1CA13A13913711810A11A10910A1391C810911811A12811812A11A12812A14713710713910911911A1371071091381281371</string><key>maxNumberOfScores</key><string>25</string>
+<key>scores</key><array>
+  <array><string>zach big beans king</string><string>28706</string><string>103</string><string>25</string></array>
+  <array><string>Agent.Logic_</string><string>28696</string><string>107</string><string>25</string></array>
+  <array><string>Food on a Stick</string><string>28694</string><string>108</string><string>25</string></array>
+  <array><string>Scrappytoon</string><string>28686</string><string>96</string><string>25</string></array>
+  <array><string>ちびちびちびちびちび</string><string>28681</string><string>104</string><string>25</string></array>
+  <array><string>Walktall2209 🇷🇸</string><string>28681</string><string>105</string><string>25</string></array>
+  <array><string>A~ma~ro</string><string>28661</string><string>96</string><string>25</string></array>
+  <array><string>best Mama ( :</string><string>28606</string><string>112</string><string>25</string></array>
+  <array><string>jmaloon</string><string>28591</string><string>110</string><string>25</string></array>
+  <array><string>xx Lupus xx</string><string>28591</string><string>109</string><string>25</string></array>
+  <array><string>manners 57manners57</string><string>28591</string><string>102</string><string>25</string></array>
+  <array><string>H87na</string><string>28591</string><string>111</string><string>25</string></array>
+  <array><string>&lt;*zinc*&gt;</string><string>28588</string><string>108</string><string>25</string></array>
+  <array><string>Rad1c4</string><string>28586</string><string>112</string><string>25</string></array>
+  <array><string>thsergei</string><string>28586</string><string>110</string><string>25</string></array>
+  <array><string>Noonie181</string><string>28491</string><string>115</string><string>25</string></array>
+  <array><string>wata923</string><string>27519</string><string>112</string><string>26</string></array>
+  <array><string>العزري 23</string><string>27514</string><string>112</string><string>26</string></array>
+  <array><string>~ 123.123 ~</string><string>27514</string><string>112</string><string>26</string></array>
+  <array><string>TheSolitaireGod</string><string>27514</string><string>114</string><string>26</string></array>
+  <array><string>rilesax</string><string>27514</string><string>115</string><string>26</string></array>
+  <array><string>shortyweb</string><string>27509</string><string>108</string><string>26</string></array>
+  <array><string>ゆっちょ0621</string><string>27499</string><string>111</string><string>26</string></array>
+  <array><string>djavital</string><string>26616</string><string>105</string><string>27</string></array>
+  <array><string>Squacious</string><string>26516</string><string>108</string><string>27</string></array>
+</array>
+<key>bestmoves</key><array>
+  <array><string>DORA007:</string><string>5711</string><string>96</string><string>138</string></array>
+  <array><string>: ZakKapoor :</string><string>2643</string><string>96</string><string>342</string></array>
+  <array><string>QQ2478</string><string>8982</string><string>96</string><string>84</string></array>
+  <array><string>Elm116</string><string>5498</string><string>96</string><string>144</string></array>
+  <array><string>Loderyck</string><string>5753</string><string>96</string><string>137</string></array>
+  <array><string>p2 95</string><string>5037</string><string>96</string><string>159</string></array>
+  <array><string>DafW100</string><string>6677</string><string>96</string><string>116</string></array>
+  <array><string>Lapin365</string><string>5566</string><string>96</string><string>142</string></array>
+  <array><string>NickTnc24</string><string>7441</string><string>96</string><string>103</string></array>
+  <array><string>annhall99</string><string>10110</string><string>96</string><string>74</string></array>
+  <array><string>Poepo&lt;3</string><string>5301</string><string>96</string><string>150</string></array>
+  <array><string>Paddu Subbu</string><string>6729</string><string>96</string><string>115</string></array>
+  <array><string>Lil_DNA🌲</string><string>7570</string><string>96</string><string>101</string></array>
+  <array><string>antz1304</string><string>6067</string><string>96</string><string>129</string></array>
+  <array><string>Ellesed</string><string>5601</string><string>96</string><string>141</string></array>
+  <array><string>RKR1310</string><string>7029</string><string>96</string><string>110</string></array>
+  <array><string>wazzu82</string><string>5824</string><string>96</string><string>135</string></array>
+  <array><string>bamaboy8</string><string>6893</string><string>96</string><string>112</string></array>
+  <array><string>Ljegoofinoff</string><string>7575</string><string>96</string><string>101</string></array>
+  <array><string>Scrappytoon</string><string>28686</string><string>96</string><string>25</string></array>
+  <array><string>QMB08</string><string>5601</string><string>96</string><string>141</string></array>
+  <array><string>jaypeaess</string><string>10240</string><string>96</string><string>73</string></array>
+  <array><string>Sling Shot Dub</string><string>5637</string><string>96</string><string>140</string></array>
+  <array><string>jzz110</string><string>8788</string><string>96</string><string>86</string></array>
+  <array><string>Chrome 79</string><string>4875</string><string>96</string><string>165</string></array>
+</array>
+<key>firstplayscores</key><array>
+  <array><string>Food on a Stick</string><string>28694</string><string>108</string><string>25</string></array>
+  <array><string>Walktall2209 🇷🇸</string><string>28591</string><string>108</string><string>25</string></array>
+  <array><string>rilesax</string><string>27514</string><string>115</string><string>26</string></array>
+  <array><string>Squacious</string><string>26516</string><string>108</string><string>27</string></array>
+  <array><string>lavin 7</string><string>26321</string><string>117</string><string>27</string></array>
+  <array><string>TAROSE007</string><string>25676</string><string>103</string><string>28</string></array>
+  <array><string>Sxgar Cxne</string><string>25586</string><string>112</string><string>28</string></array>
+  <array><string>jojacko75</string><string>24733</string><string>113</string><string>29</string></array>
+  <array><string>Agent.Logic_</string><string>24728</string><string>109</string><string>29</string></array>
+  <array><string>tmmilk</string><string>24650</string><string>127</string><string>29</string></array>
+  <array><string>WiZz_K1LL3R</string><string>24633</string><string>115</string><string>29</string></array>
+  <array><string>sandbarry</string><string>24623</string><string>116</string><string>29</string></array>
+  <array><string>brucrew17</string><string>23927</string><string>112</string><string>30</string></array>
+  <array><string>rawaz</string><string>23922</string><string>111</string><string>30</string></array>
+  <array><string>ルンダナベイビー</string><string>23922</string><string>112</string><string>30</string></array>
+  <array><string>monisha1991</string><string>23922</string><string>109</string><string>30</string></array>
+  <array><string>bautzi19</string><string>23912</string><string>111</string><string>30</string></array>
+  <array><string>t.b.levy</string><string>23912</string><string>110</string><string>30</string></array>
+  <array><string>VéroMinou🇫🇷</string><string>23812</string><string>116</string><string>30</string></array>
+  <array><string>Laura RN BSN</string><string>23174</string><string>115</string><string>31</string></array>
+  <array><string>ミナージュ19</string><string>23169</string><string>109</string><string>31</string></array>
+  <array><string>KILLERADS</string><string>23169</string><string>111</string><string>31</string></array>
+  <array><string>LiotheMessi</string><string>23164</string><string>112</string><string>31</string></array>
+  <array><string>sillyjam</string><string>23164</string><string>110</string><string>31</string></array>
+  <array><string>djnjovcevski</string><string>23164</string><string>107</string><string>31</string></array>
+</array>
+</dict></plist>
